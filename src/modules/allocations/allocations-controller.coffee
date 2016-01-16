@@ -1,4 +1,13 @@
 module.exports = (http, db, _, async) ->
+
+  getEmployeeById = (employees, employeeId) ->
+
+
+    for employee in employees
+
+      if employeeId.toString() == employee._id.toString()
+        return employee
+
   getAll: (data, callback) ->
 
     employees = []
@@ -28,17 +37,18 @@ module.exports = (http, db, _, async) ->
           endDate: allocation.endDate
           realAllocation: allocation.realAllocation
           project: _.find(projects, '_id', allocation.project_id)
-          employee: _.find(employees, '_id', allocation.employee_id)
+          employee: getEmployeeById(employees, allocation.employee_id)
 
-        contains = false
-        employeesAllocced.filter (employee) ->
-          if employee._id == newAlloc.employee
-            contains = true
+
+        arrFiltered = employeesAllocced.filter (employee) ->
+          if employee._id == newAlloc.employee._id
             return true
           else
             return false
 
-        if not contains
+
+        if arrFiltered.length == 0
+          # console.log newAlloc.employee
           employeesAllocced.push newAlloc.employee
 
         return newAlloc
