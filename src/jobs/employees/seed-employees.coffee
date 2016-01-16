@@ -68,7 +68,7 @@ getEmployees = (technologies) ->
 
   employees.push { query: null, document: {name: 'Filipe Lima', technologies: getArrayOfTechnologiesIds([], technologies) }  }
 
-  employees.push { query: null, document: {name: 'Filipe Pereira', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END, ANDROID_FRONT_END, IOS_BACK_END, IOS_FRONT_END] technologies) }  }
+  employees.push { query: null, document: {name: 'Filipe Pereira', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END, ANDROID_FRONT_END, IOS_BACK_END, IOS_FRONT_END], technologies) }  }
 
   employees.push { query: null, document: {name: 'Flavio Mello', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END, ANDROID_FRONT_END, IOS_BACK_END, IOS_FRONT_END, NODE, ROR, ANGULAR], technologies) }  }
 
