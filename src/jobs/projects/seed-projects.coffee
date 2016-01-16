@@ -53,6 +53,8 @@ getProjects = (technologiesData, employeesData) ->
     name: 'Lab in Hands'
     technologies: getArrayOfTechnologiesIds([IOS_BACK_END, IOS_FRONT_END], technologiesData)
     employees: getArrEmployeesIds([ALEXANDRE_FUGITA], employeesData)
+    startDate:
+    endDate
 
   projects.push { query: null, document:  LAB_IN_HANDS}
 
