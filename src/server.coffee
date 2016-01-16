@@ -32,7 +32,8 @@ common.middlewares.mobileRequestValidator = require('src/modules/common/middlewa
 # Database
 db = {}
 db.schemas = {}
-db.schemas.user = require('src/db/schemas/user')
+db.schemas.employee = require('src/db/schemas/employee')
+db.schemas.technology = require('src/db/schemas/technology')
 db.db = require('src/db/db') app.dataHandling, db.schemas
 
 # Routes
