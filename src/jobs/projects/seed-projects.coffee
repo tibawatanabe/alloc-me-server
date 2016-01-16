@@ -17,6 +17,11 @@ WP = [WP_FRONT_END, WP_BACK_END]
 NODE = "Node"
 ANGULAR = "Angular"
 ROR = "RoR"
+NODE_ANDROID = [NODE, ANDROID_FRONT_END, ANDROID_BACK_END]
+NODE_IOS = [NODE, IOS_FRONT_END, IOS_BACK_END]
+ANDROID_IOS = [ANDROID_FRONT_END, ANDROID_BACK_END, IOS_BACK_END, IOS_FRONT_END]
+ANDROID_IOS_NODE = [ANDROID_FRONT_END, ANDROID_BACK_END, IOS_BACK_END, IOS_FRONT_END, NODE]
+
 
 getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 
@@ -37,7 +42,7 @@ createProject = (name, technologies, technologiesData, iniDate, endDate, color) 
     technologies: getArrayOfTechnologiesIds(technologies, technologiesData)
     startDate: Date.parse(iniDate)
     endDate: Date.parse(endDate)
-    color; color
+    color: color
   return project
 
 getProjects = (technologiesData, employeesData) ->
@@ -66,33 +71,21 @@ getProjects = (technologiesData, employeesData) ->
   WEEK4_INI = "/25/2016"
   WEEK4_END = "/31/2016"
 
-  PRO120 - Start: 18/01 End: 13/05
-  Raia - End 18/02
-  WebMotors End:22/01
-  Ponto Frio mSite End: 26/01
-  Starbucks: End: 08/04
-  EMS iOS9: End: End: 11/03
-  Panelinha: Start: 02/02 End 10/05
-  Webmotors fase 2 Start: 02/02 End: 26/02
-  Raia fase 2: End: 26/02
-  Merck: Start:18/01 End:18/03 
-  Marsh Android: Start: 01/02 End: 22/02
-  Cnova Marketplace Internacional Android/iOS Start: 16/02 End:24/05
 
 
-  PRO_120 = createProject('Pro 120', [NODE, ANDROID], technologiesData, JAN + WEEK3_INI, MAY + WEEK2_END, "33485F")
+  PRO_120 = createProject('Pro 120', NODE_ANDROID, technologiesData, JAN + WEEK3_INI, MAY + WEEK2_END, "33485F")
   projects.push { query: null, document:  PRO_120}
 
-  LAB_IN_HANDS = createProject('Lab in Hands', [IOS, NODE], technologiesData, JAN + WEEK1_INI, FEB + WEEK1_END, "F2C500")
+  LAB_IN_HANDS = createProject('Lab in Hands', NODE_IOS, technologiesData, JAN + WEEK1_INI, FEB + WEEK1_END, "F2C500")
   projects.push { query: null, document:  LAB_IN_HANDS}
 
-  WEBMOTORS = createProject('WebMotors', [ANDROID], technologiesData, JAN + WEEK1_INI, JAN + WEEK3_END, "00BD9C")
+  WEBMOTORS = createProject('WebMotors', ANDROID, technologiesData, JAN + WEEK1_INI, JAN + WEEK3_END, "00BD9C")
   projects.push { query: null, document:  WEBMOTORS}
 
-  WEBMOTORS_FASE_2 = createProject('WebMotors fase 2', [ANDROID], technologiesData, FEB + WEEK1_INI, FEB + WEEK4_END, "E6E6E6")
+  WEBMOTORS_FASE_2 = createProject('WebMotors fase 2', ANDROID, technologiesData, FEB + WEEK1_INI, FEB + WEEK4_END, "E6E6E6")
   projects.push { query: null, document:  WEBMOTORS_FASE_2}
 
-  MERCK = createProject('Merck', [IOS, NODE], technologiesData, JAN + WEEK3_INI, FEB + WEEK3_END, "1ECE6D")
+  MERCK = createProject('Merck', NODE_IOS, technologiesData, JAN + WEEK3_INI, FEB + WEEK3_END, "1ECE6D")
   projects.push { query: null, document:  MERCK}
 
   CANAL_DA_PECA = createProject('Canal da peça', [ANGULAR, NODE], technologiesData, JAN + WEEK1_INI, JAN + WEEK1_END, "9C56B8")
@@ -104,25 +97,25 @@ getProjects = (technologiesData, employeesData) ->
   PONTO_FRIO_MSITE = createProject('Ponto Frio mSite', [ANGULAR, NODE], technologiesData, JAN + WEEK1_INI, JAN + WEEK4_END, "E94B35")
   projects.push { query: null, document:  PONTO_FRIO_MSITE}
 
-  MARKETPLACE_INTERNCIONAL_IOS_ANDROID = createProject('CNova - Marketplace interncional (iOS/Android)', [IOS, ANDROID], technologiesData, FEB + WEEK3_INI, MAY + WEEK3_END, "BDC3C7")
+  MARKETPLACE_INTERNCIONAL_IOS_ANDROID = createProject('CNova - Marketplace interncional (iOS/Android)', ANDROID_IOS, technologiesData, FEB + WEEK3_INI, MAY + WEEK3_END, "BDC3C7")
   projects.push { query: null, document:  MARKETPLACE_INTERNCIONAL_IOS_ANDROID}
 
-  RAIA = createProject('Raia', [IOS, ANDROID, NODE], technologiesData, JAN + WEEK1_INI, FEB + WEEK3_END, "207FBB")
+  RAIA = createProject('Raia', ANDROID_IOS_NODE, technologiesData, JAN + WEEK1_INI, FEB + WEEK3_END, "207FBB")
   projects.push { query: null, document:  RAIA}
 
-  RAIA_FASE_2 = createProject('Raia fase 2', [IOS, NODE, ANDROID], technologiesData, JAN + WEEK1_INI, FEB + WEEK4_END, "000000")
+  RAIA_FASE_2 = createProject('Raia fase 2', ANDROID_IOS_NODE, technologiesData, JAN + WEEK1_INI, FEB + WEEK4_END, "000000")
   projects.push { query: null, document:  RAIA_FASE_2}
 
-  STARBUCKS = createProject('Starbucks', [WP], technologiesData, JAN + WEEK1_INI, APR + WEEK1_END, "2C97DE")
+  STARBUCKS = createProject('Starbucks', WP, technologiesData, JAN + WEEK1_INI, APR + WEEK1_END, "2C97DE")
   projects.push { query: null, document:  STARBUCKS}
 
-  EMS_IOS9 = createProject('EMS iOS9', [IOS], technologiesData, JAN + WEEK1_INI, MAR + WEEK2_END, "FFFFFF")
+  EMS_IOS9 = createProject('EMS iOS9', IOS, technologiesData, JAN + WEEK1_INI, MAR + WEEK2_END, "FFFFFF")
   projects.push { query: null, document:  EMS_IOS9}
 
   PANELINHA = createProject('Panelinha', [NODE, ANGULAR], technologiesData, FEB + WEEK1_INI, MAY + WEEK2_END, "363636")
   projects.push { query: null, document:  PANELINHA}
 
-  MARSH_ANDROID = createProject('Marsh Android', [ANDROID], technologiesData, FEB + WEEK1_INI, FEB + WEEK3_END, "AFAFAF")
+  MARSH_ANDROID = createProject('Marsh Android', ANDROID, technologiesData, FEB + WEEK1_INI, FEB + WEEK3_END, "AFAFAF")
   projects.push { query: null, document:  MARSH_ANDROID}
 
   return projects

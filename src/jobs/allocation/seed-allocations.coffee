@@ -132,61 +132,61 @@ getAllocations = (projectsData, employeesData) ->
   WEEK4_INI = "/25/2016"
   WEEK4_END = "/31/2016"
 
-  PRO_120_MARCELO_RISSE = (LAB_IN_HANDS, projectsData, MARCELO_RISSE, employeesData, JAN + WEEK3_INI, JAN + WEEK4_END, true)
+  PRO_120_MARCELO_RISSE = createProject(LAB_IN_HANDS, projectsData, MARCELO_RISSE, employeesData, JAN + WEEK3_INI, JAN + WEEK4_END, true)
   allocations.push { query: null, document: PRO_120_MARCELO_RISSE }
 
-  LAB_IN_HANDS_ALEXANDRE_FUJITA = (LAB_IN_HANDS, projectsData, ALEXANDRE_FUJITA, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
+  LAB_IN_HANDS_ALEXANDRE_FUJITA = createProject(LAB_IN_HANDS, projectsData, ALEXANDRE_FUGITA, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
   allocations.push { query: null, document: LAB_IN_HANDS_ALEXANDRE_FUJITA }
 
-  WEBMOTORS_VITOR_NAVARRO = (LAB_IN_HANDS, projectsData, VITOR_NAVARRO, employeesData, JAN + WEEK1_INI, JAN + WEEK2_END, true)
+  WEBMOTORS_VITOR_NAVARRO = createProject(LAB_IN_HANDS, projectsData, VITOR_NAVARRO, employeesData, JAN + WEEK1_INI, JAN + WEEK2_END, true)
   allocations.push { query: null, document: WEBMOTORS_VITOR_NAVARRO }
 
-  MERCK_VITOR_NAVARRO = (LAB_IN_HANDS, projectsData, VITOR_NAVARRO, employeesData, JAN + WEEK3_INI, FEB + WEEK4_END, true)
+  MERCK_VITOR_NAVARRO = createProject(LAB_IN_HANDS, projectsData, VITOR_NAVARRO, employeesData, JAN + WEEK3_INI, FEB + WEEK4_END, true)
   allocations.push { query: null, document: MERCK_VITOR_NAVARRO }
 
-  CANAL_DA_PECA_THIAGO_WATANABE = (LAB_IN_HANDS, projectsData, THIAGO_WATANABE, employeesData, JAN + WEEK1_INI, JAN + WEEK1_END, true)
+  CANAL_DA_PECA_THIAGO_WATANABE = createProject(LAB_IN_HANDS, projectsData, THIAGO_WATANABE, employeesData, JAN + WEEK1_INI, JAN + WEEK1_END, true)
   allocations.push { query: null, document: CANAL_DA_PECA_THIAGO_WATANABE }
 
-  MARKETPLACE_INTERNCIONAL_MSITES_THIAGO_WATANABE = (LAB_IN_HANDS, projectsData, THIAGO_WATANABE, employeesData, JAN + WEEK2_INI, FEB + WEEK4_END, true)
+  MARKETPLACE_INTERNCIONAL_MSITES_THIAGO_WATANABE = createProject(LAB_IN_HANDS, projectsData, THIAGO_WATANABE, employeesData, JAN + WEEK2_INI, FEB + WEEK4_END, true)
   allocations.push { query: null, document: MARKETPLACE_INTERNCIONAL_MSITES_THIAGO_WATANABE }
 
-  PONTO_FRIO_MSITE_DANIEL_BARRETO = (LAB_IN_HANDS, projectsData, DANIEL_BARRETO, employeesData, JAN + WEEK1_INI, JAN + WEEK2_END, true)
+  PONTO_FRIO_MSITE_DANIEL_BARRETO = createProject(LAB_IN_HANDS, projectsData, DANIEL_BARRETO, employeesData, JAN + WEEK1_INI, JAN + WEEK2_END, true)
   allocations.push { query: null, document: PONTO_FRIO_MSITE_DANIEL_BARRETO }
 
-  LAB_IN_HANDS_DANIEL_BARRETO = (LAB_IN_HANDS, projectsData, DANIEL_BARRETO, employeesData, JAN + WEEK3_INI, FEB + WEEK1_END, true)
+  LAB_IN_HANDS_DANIEL_BARRETO = createProject(LAB_IN_HANDS, projectsData, DANIEL_BARRETO, employeesData, JAN + WEEK3_INI, FEB + WEEK1_END, true)
   allocations.push { query: null, document: LAB_IN_HANDS_DANIEL_BARRETO }
 
-  RAIA_FABIO_HIROKI = (LAB_IN_HANDS, projectsData, FABIO_HIROKI, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
+  RAIA_FABIO_HIROKI = createProject(LAB_IN_HANDS, projectsData, FABIO_HIROKI, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
   allocations.push { query: null, document: RAIA_FABIO_HIROKI }
 
-  MARKETPLACE_INTERNCIONAL_IOS_ANDROID_FABIO_HIROKI = (LAB_IN_HANDS, projectsData, FABIO_HIROKI, employeesData, FEB + WEEK1_INI, MAR + WEEK3_END, true)
+  MARKETPLACE_INTERNCIONAL_IOS_ANDROID_FABIO_HIROKI = createProject(LAB_IN_HANDS, projectsData, FABIO_HIROKI, employeesData, FEB + WEEK1_INI, MAR + WEEK3_END, true)
   allocations.push { query: null, document: MARKETPLACE_INTERNCIONAL_IOS_ANDROID_FABIO_HIROKI }
 
-  LAB_IN_HANDS_THIAGO_OLIVEIRA = (LAB_IN_HANDS, projectsData, THIAGO_OLIVEIRA, employeesData, JAN + WEEK1_INI, JAN + WEEK2_END, true)
+  LAB_IN_HANDS_THIAGO_OLIVEIRA = createProject(LAB_IN_HANDS, projectsData, THIAGO_OLIVEIRA, employeesData, JAN + WEEK1_INI, JAN + WEEK2_END, true)
   allocations.push { query: null, document: LAB_IN_HANDS_THIAGO_OLIVEIRA }
 
-  STARBUCKS_THIAGO_OLIVEIRA = (LAB_IN_HANDS, projectsData, THIAGO_OLIVEIRA, employeesData, JAN + WEEK3_INI, FEB + WEEK1_END, true)
+  STARBUCKS_THIAGO_OLIVEIRA = createProject(LAB_IN_HANDS, projectsData, THIAGO_OLIVEIRA, employeesData, JAN + WEEK3_INI, FEB + WEEK1_END, true)
   allocations.push { query: null, document: STARBUCKS_THIAGO_OLIVEIRA }
 
-  MARKETPLACE_INTERNCIONAL_MSITES_GUILHERME_MAMPRIN = (LAB_IN_HANDS, projectsData, GUILHERME_MAMPRIN, employeesData, JAN + WEEK1_INI, FEB + WEEK3_END, true)
+  MARKETPLACE_INTERNCIONAL_MSITES_GUILHERME_MAMPRIN = createProject(LAB_IN_HANDS, projectsData, GUILHERME_MAMPRIN, employeesData, JAN + WEEK1_INI, FEB + WEEK3_END, true)
   allocations.push { query: null, document: MARKETPLACE_INTERNCIONAL_MSITES_GUILHERME_MAMPRIN }
 
-  PRO_120_JONATAS_COSTA = (LAB_IN_HANDS, projectsData, JONATAS_COSTA, employeesData, JAN + WEEK1_INI, FEB + WEEK3_END, true)
+  PRO_120_JONATAS_COSTA = createProject(LAB_IN_HANDS, projectsData, JONATAS_COSTA, employeesData, JAN + WEEK1_INI, FEB + WEEK3_END, true)
   allocations.push { query: null, document: PRO_120_JONATAS_COSTA }
 
-  PRO_120_LETICIA_RODRIGUES = (LAB_IN_HANDS, projectsData, LETICIA_RODRIGUES, employeesData, JAN + WEEK1_INI, FEB + WEEK3_END, true)
+  PRO_120_LETICIA_RODRIGUES = createProject(LAB_IN_HANDS, projectsData, LETICIA_RODRIGUES, employeesData, JAN + WEEK1_INI, FEB + WEEK3_END, true)
   allocations.push { query: null, document: PRO_120_LETICIA_RODRIGUES }
 
-  LAB_IN_HANDS_LUCAS_BATISTA = (LAB_IN_HANDS, projectsData, LUCAS_BATISTA, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
+  LAB_IN_HANDS_LUCAS_BATISTA = createProject(LAB_IN_HANDS, projectsData, LUCAS_BATISTA, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
   allocations.push { query: null, document: LAB_IN_HANDS_LUCAS_BATISTA }
 
-  MARKETPLACE_INTERNCIONAL_IOS_ANDROID_LUCAS_BATISTA = (LAB_IN_HANDS, projectsData, LUCAS_BATISTA, employeesData, FEB + WEEK1_INI, MAR + WEEK3_END, true)
+  MARKETPLACE_INTERNCIONAL_IOS_ANDROID_LUCAS_BATISTA = createProject(LAB_IN_HANDS, projectsData, LUCAS_BATISTA, employeesData, FEB + WEEK1_INI, MAR + WEEK3_END, true)
   allocations.push { query: null, document: MARKETPLACE_INTERNCIONAL_IOS_ANDROID_LUCAS_BATISTA }
 
-  STARBUCKS_PEDRO_MATSUMOTO = (LAB_IN_HANDS, projectsData, PEDRO_MATSUMOTO, employeesData, JAN + WEEK1_INI, FEB + WEEK1_END, true)
+  STARBUCKS_PEDRO_MATSUMOTO = createProject(LAB_IN_HANDS, projectsData, PEDRO_MATSUMOTO, employeesData, JAN + WEEK1_INI, FEB + WEEK1_END, true)
   allocations.push { query: null, document: STARBUCKS_PEDRO_MATSUMOTO }
 
-  RAIA_STEFANO_SERAVALLI = (LAB_IN_HANDS, projectsData, STEFANO_SERAVALLI, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
+  RAIA_STEFANO_SERAVALLI = createProject(LAB_IN_HANDS, projectsData, STEFANO_SERAVALLI, employeesData, JAN + WEEK1_INI, JAN + WEEK4_END, true)
   allocations.push { query: null, document: RAIA_STEFANO_SERAVALLI }
 
   console.log JSON.stringify allocations
