@@ -17,7 +17,7 @@ ANGULAR = "Angular"
 
 ROR = "RoR"
 
-getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
+getArrayOfTechnologiesIds = (technologiesNames,  technologiesData) ->
 
   arrIds = _.map technologiesNames, (techName) ->
     filtered = technologiesData.filter (techData) ->
@@ -34,7 +34,7 @@ getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 getEmployees = (technologies) ->
 
   employees = []
-  employees.push { query: null, document: {name: 'Alexandre Fugita', technologies: getArrayOfTechnologiesIds([IOS_BACK_END, IOS_FRONT_END, ANDROID_BACK_END], technologies) }  }
+  employees.push { query: null, document: {name: 'Alexandre Fugita', imgUrl:'https://avatars1.githubusercontent.com/u/1382069?v=3&s=400', technologies: getArrayOfTechnologiesIds([IOS_BACK_END, IOS_FRONT_END, ANDROID_BACK_END], technologies) }  }
 
   employees.push { query: null, document: {name: 'Alinne Hanako', technologies: getArrayOfTechnologiesIds([], technologies) }  }
 
