@@ -3,6 +3,7 @@ module.exports = (http, db, _, async) ->
 
     employees = []
     projects = []
+    employeesAllocced = []
 
     async.parallel [
       (cb) ->
@@ -29,7 +30,22 @@ module.exports = (http, db, _, async) ->
           project: _.find(projects, '_id', allocation.project_id)
           employee: _.find(employees, '_id', allocation.employee_id)
 
+        contains = false
+        employeesAllocced.filter (employee) ->
+          if employee._id == newAlloc.employee
+            contains = true
+            return true
+          else
+            return false
+
+        if not contains
+          employeesAllocced.push newAlloc.employee
+
         return newAlloc
 
 
-      callback http.responseBuilder.build(allocReturned)
+      response =
+        employees: employeesAllocced.sort (a, b) -> return a.name.localeCompare(b.name)
+        allocations: allocReturned
+
+      callback http.responseBuilder.build(response)
