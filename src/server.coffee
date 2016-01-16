@@ -7,6 +7,7 @@ app.jsonschema = require('jsonschema')
 app.validator = new app.jsonschema.Validator()
 app.configHelper = require('tq1-helpers').config_helper
 app._ = require('lodash')
+app.async = require('async')
 
 core = {}
 
@@ -44,12 +45,13 @@ db.db = require('src/db/db') app.dataHandling, db.schemas
 # Controllers
 allocations = {}
 allocations.controllers = {}
-allocations.controllers.getAll = require('src/modules/allocations/allocations-controller.coffee') db.db, app._
+allocations.controllers.getAll = require('src/modules/allocations/allocations-controller.coffee') core.http, db.db, app._, app.async
 
 # Routes
 routes = {}
 routes.routes = require('src/routes/routes') app.express, core.config, routes
 routes.v1 = {}
+routes.v1.allocations = require('src/routes/v1/allocation') allocations
 
 module.exports = (callback) ->
   return require('src/app') app.express, app.bodyParser, core.config, routes.routes, callback
