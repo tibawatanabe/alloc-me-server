@@ -2,7 +2,20 @@ require('rootpath')()
 helper = require('src/jobs/jobs-helper')()
 _ = require ('lodash')
 
+ANDROID_FRONT_END = "Android Front-End"
 ANDROID_BACK_END = "Android Back-End"
+
+IOS_FRONT_END = "Ios Front-End"
+IOS_BACK_END = "Ios Back-End"
+
+WP_FRONT_END = "WP Front-End"
+WP_BACK_END = "WP Back-End"
+
+NODE = "Node"
+
+ANGULAR = "Angular"
+
+ROR = "RoR"
 
 getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 
