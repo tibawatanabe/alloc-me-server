@@ -93,8 +93,6 @@ getEmployees = (technologies) ->
   employees.push { query: null, document: {name: 'Vanessa Yumi', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END], technologies) }  }
   employees.push { query: null, document: {name: 'Vitor Navarro', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END], technologies) }  }
 
-  console.log JSON.stringify(employees)
-
   return employees
 
 sync = (db, data_handling) ->

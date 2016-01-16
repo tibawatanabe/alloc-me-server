@@ -1,5 +1,6 @@
 require('rootpath')()
 helper = require('src/jobs/jobs-helper')()
+_ = require ('lodash')
 
 ALEXANDRE_FUGITA = "Alexandre Fugita"
 
@@ -25,12 +26,10 @@ getArrEmployeesIds = (employeeNames, employeeData) ->
       else
         return false
 
-      return filtered[0]._id
+    return filtered[0]._id
 
-    return arrIds
+  return arrIds
 
-  return _.map technologiesNames, (techName) ->
-    return techName
 
 
 getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
@@ -67,10 +66,8 @@ sync = (db, data_handling) ->
 
       db.Technology.find null, (err, technologies) ->
 
-        getProjects(technologies, employees)
+        db.Project.bulkSaveOrUpdate getProjects(technologies, employees), (err, data) ->
 
-      # db.Project.bulkSaveOrUpdate getProjects(), (err, data) ->
-
-        data_handling.close()
+          data_handling.close()
 
 sync helper.db, helper.data_handling
