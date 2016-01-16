@@ -17,20 +17,6 @@ NODE = "Node"
 ANGULAR = "Angular"
 ROR = "RoR"
 
-getArrEmployeesIds = (employeeNames, employeeData) ->
-
-  arrIds = _.map employeeNames, (name) ->
-    filtered = employeeData.filter (data) ->
-      if data.name == name
-        return true
-      else
-        return false
-
-    return filtered[0]._id
-
-  return arrIds
-
-
 
 getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 
@@ -45,14 +31,13 @@ getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 
   return arrIds
 
-getProjects = (technologiesData, employeesData) ->
+getProjects = (technologiesData) ->
 
   projects = []
 
   LAB_IN_HANDS =
     name: 'Lab in Hands'
     technologies: getArrayOfTechnologiesIds([IOS_BACK_END, IOS_FRONT_END], technologiesData)
-    employees: getArrEmployeesIds([ALEXANDRE_FUGITA], employeesData)
     startDate: Date.parse("1/1/2016")
     endDate: Date.parse("1/31/2016")
 
@@ -64,12 +49,10 @@ sync = (db, data_handling) ->
 
   db.Project.dropCollection (err, data) ->
 
-    db.Employee.find null, (err, employees) ->
+    db.Technology.find null, (err, technologies) ->
 
-      db.Technology.find null, (err, technologies) ->
+      db.Project.bulkSaveOrUpdate getProjects(technologies), (err, data) ->
 
-        db.Project.bulkSaveOrUpdate getProjects(technologies, employees), (err, data) ->
-
-          data_handling.close()
+        data_handling.close()
 
 sync helper.db, helper.data_handling
