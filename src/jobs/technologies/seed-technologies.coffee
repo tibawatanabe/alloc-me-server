@@ -5,7 +5,19 @@ getTechnologies = () ->
 
   technologies = []
   technologies.push { query: {}, document: {name: 'Android Front-End'}  }
+  technologies.push { query: {}, document: {name: 'Android Back-End'}  }
 
+  technologies.push { query: {}, document: {name: 'Ios Front-End'}  }
+  technologies.push { query: {}, document: {name: 'Ios Back-End'}  }
+
+  technologies.push { query: {}, document: {name: 'WP Front-End'}  }
+  technologies.push { query: {}, document: {name: 'WP Back-End'}  }
+
+  technologies.push { query: {}, document: {name: 'Node'}  }
+
+  technologies.push { query: {}, document: {name: 'Angular'}  }
+
+  technologies.push { query: {}, document: {name: 'RoR'}  }
 
   return technologies
 
