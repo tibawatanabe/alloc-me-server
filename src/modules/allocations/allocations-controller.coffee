@@ -33,35 +33,36 @@ module.exports = (http, db, _, async) ->
 
     ], (err) ->
 
-    db.Allocation.findLean null, (err, allocations) ->
+      db.Allocation.findLean null, (err, allocations) ->
 
-      allocReturned = _.map allocations, (allocation) ->
-        newAlloc =
-          _id: allocation._id
-          startDate: allocation.startDate
-          endDate: allocation.endDate
-          realAllocation: allocation.realAllocation
-          project: getProjectById(projects, allocation.project_id)
-          employee: getEmployeeById(employees, allocation.employee_id)
-
-
-        arrFiltered = employeesAllocced.filter (employee) ->
-          console.log employee
-          if employee._id == newAlloc.employee._id
-            return true
-          else
-            return false
+        allocReturned = _.map allocations, (allocation) ->
+          newAlloc =
+            _id: allocation._id
+            startDate: allocation.startDate
+            endDate: allocation.endDate
+            realAllocation: allocation.realAllocation
+            project: getProjectById(projects, allocation.project_id)
+            employee: getEmployeeById(employees, allocation.employee_id)
 
 
-        if arrFiltered.length == 0
-          # console.log newAlloc.employee
-          employeesAllocced.push newAlloc.employee
 
-        return newAlloc
+          arrFiltered = employeesAllocced.filter (employee) ->
+            console.log employee
+            if employee._id == newAlloc.employee._id
+              return true
+            else
+              return false
 
 
-      response =
-        employees: employeesAllocced.sort (a, b) -> return a.name.localeCompare(b.name)
-        allocations: allocReturned
+          if arrFiltered.length == 0
+            # console.log newAlloc.employee
+            employeesAllocced.push newAlloc.employee
 
-      callback http.responseBuilder.build(response)
+          return newAlloc
+
+
+        response =
+          employees: employeesAllocced.sort (a, b) -> return a.name.localeCompare(b.name)
+          allocations: allocReturned
+
+        callback http.responseBuilder.build(response)
