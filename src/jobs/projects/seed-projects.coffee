@@ -2,8 +2,6 @@ require('rootpath')()
 helper = require('src/jobs/jobs-helper')()
 _ = require ('lodash')
 
-ALEXANDRE_FUGITA = "Alexandre Fugita"
-
 
 
 # Technologies
@@ -16,6 +14,7 @@ WP_BACK_END = "WP Back-End"
 NODE = "Node"
 ANGULAR = "Angular"
 ROR = "RoR"
+
 
 
 getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
@@ -31,7 +30,7 @@ getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 
   return arrIds
 
-getProjects = (technologiesData) ->
+getProjects = (technologiesData, employeesData) ->
 
   projects = []
 
@@ -49,10 +48,12 @@ sync = (db, data_handling) ->
 
   db.Project.dropCollection (err, data) ->
 
-    db.Technology.find null, (err, technologies) ->
+    db.Employee.find null, (err, employees) ->
 
-      db.Project.bulkSaveOrUpdate getProjects(technologies), (err, data) ->
+      db.Technology.find null, (err, technologies) ->
 
-        data_handling.close()
+        db.Project.bulkSaveOrUpdate getProjects(technologies, employees), (err, data) ->
+
+          data_handling.close()
 
 sync helper.db, helper.data_handling

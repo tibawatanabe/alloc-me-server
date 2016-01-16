@@ -6,6 +6,7 @@ module.exports = (mongoose, mongooseAlias, statics) ->
         employee_id: {"type": "string", "default": null}
         startDate: {"type": "Date", "default": null},
         endDate: {"type": "Date", "default": null}
+        realAllocation: {"type": "Boolean", "default": true}
 
       @schema.plugin(mongooseAlias)
 
