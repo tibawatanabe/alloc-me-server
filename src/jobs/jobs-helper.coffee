@@ -6,6 +6,7 @@ app.dataHandling = require('node-data-handling')()
 app.jsonschema = require('jsonschema')
 app.validator = new app.jsonschema.Validator()
 app.configHelper = require('tq1-helpers').config_helper
+app._ = require('lodash')
 
 core = {}
 
