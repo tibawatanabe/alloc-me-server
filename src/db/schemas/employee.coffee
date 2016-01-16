@@ -5,6 +5,7 @@ module.exports = (mongoose, mongooseAlias, statics) ->
         name: {"type": "string", "default": null},
         technologies: {"type": "array", "default": null}
         unavailable_periods: {"type": "array", "default": null}
+        imgUrl: {"type": "string", "default": null},
 
       @schema.plugin(mongooseAlias)
 
