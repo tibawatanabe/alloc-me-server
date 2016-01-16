@@ -25,13 +25,11 @@ getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
         return true
       else
         return false
-        
+
     return filtered[0]._id
 
   return arrIds
 
-  return _.map technologiesNames, (techName) ->
-    return techName
 
 getEmployees = (technologies) ->
 
@@ -95,9 +93,7 @@ getEmployees = (technologies) ->
   employees.push { query: null, document: {name: 'Vanessa Yumi', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END], technologies) }  }
   employees.push { query: null, document: {name: 'Vitor Navarro', technologies: getArrayOfTechnologiesIds([ANDROID_BACK_END], technologies) }  }
 
-  console.log JSON.stringify(employees)
-
-  return technologies
+  return employees
 
 sync = (db, data_handling) ->
 
@@ -105,12 +101,8 @@ sync = (db, data_handling) ->
 
     db.Technology.find null, (err, technologies) ->
 
-      # console.log technologies
+      db.Employee.bulkSaveOrUpdate getEmployees(technologies), (err, data) ->
 
-      getEmployees(technologies)
-
-      # db.Employee.bulkSaveOrUpdate getEmployees(technologies), (err, data) ->
-
-      data_handling.close()
+        data_handling.close()
 
 sync helper.db, helper.data_handling

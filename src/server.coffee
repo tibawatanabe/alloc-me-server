@@ -34,6 +34,8 @@ db = {}
 db.schemas = {}
 db.schemas.employee = require('src/db/schemas/employee')
 db.schemas.technology = require('src/db/schemas/technology')
+db.schemas.allocation = require('src/db/schemas/allocation')
+db.schemas.project = require('src/db/schemas/project')
 db.db = require('src/db/db') app.dataHandling, db.schemas
 
 # Routes
