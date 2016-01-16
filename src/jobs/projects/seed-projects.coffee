@@ -15,8 +15,6 @@ NODE = "Node"
 ANGULAR = "Angular"
 ROR = "RoR"
 
-
-
 getArrayOfTechnologiesIds = (technologiesNames, technologiesData) ->
 
   arrIds = _.map technologiesNames, (techName) ->

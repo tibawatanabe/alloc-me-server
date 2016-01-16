@@ -6,6 +6,7 @@ app.dataHandling = require('node-data-handling')()
 app.jsonschema = require('jsonschema')
 app.validator = new app.jsonschema.Validator()
 app.configHelper = require('tq1-helpers').config_helper
+app._ = require('lodash')
 
 core = {}
 
@@ -25,6 +26,8 @@ core.http = {}
 core.http.mixin = require('src/core/http/mixin.coffee')()
 core.http.responseBuilder = require('src/core/http/response-builder.coffee') common.jsonSchemaValidator
 
+
+
 # Common middlewares
 common.middlewares = {}
 common.middlewares.mobileRequestValidator = require('src/modules/common/middlewares/mobile-request-validator-middleware') core.http.responseBuilder, common.jsonSchemaValidator
@@ -37,6 +40,11 @@ db.schemas.technology = require('src/db/schemas/technology')
 db.schemas.allocation = require('src/db/schemas/allocation')
 db.schemas.project = require('src/db/schemas/project')
 db.db = require('src/db/db') app.dataHandling, db.schemas
+
+# Controllers
+allocations = {}
+allocations.controllers = {}
+allocations.controllers.getAll = require('src/modules/allocations/allocations-controller.coffee') db.db, app._
 
 # Routes
 routes = {}
