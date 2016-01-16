@@ -46,6 +46,7 @@ module.exports = (http, db, _, async) ->
 
 
         arrFiltered = employeesAllocced.filter (employee) ->
+          console.log employee
           if employee._id == newAlloc.employee._id
             return true
           else
