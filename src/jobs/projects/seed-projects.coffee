@@ -62,7 +62,7 @@ getProjects = (technologiesData, employeesData) ->
   NOV = "11"
   DEC = "12"
 
-  WEEK1_INI = "/1/2016"
+  WEEK1_INI = "/4/2016"
   WEEK1_END = "/8/2016"
   WEEK2_INI = "/9/2016"
   WEEK2_END = "/16/2016"
