@@ -47,11 +47,17 @@ allocations = {}
 allocations.controllers = {}
 allocations.controllers.getAll = require('src/modules/allocations/allocations-controller.coffee') core.http, db.db, app._, app.async
 
+employees = {}
+employees.controllers = {}
+employees.controllers.getEmployeesToAlloc = require('src/modules/employees/employees-controller.coffee') core.http, db.db, app._, app.async
+
 # Routes
 routes = {}
 routes.routes = require('src/routes/routes') app.express, core.config, routes
 routes.v1 = {}
 routes.v1.allocations = require('src/routes/v1/allocation') allocations
+routes.v1.employees = require('src/routes/v1/employees') employees
+
 
 module.exports = (callback) ->
   return require('src/app') app.express, app.bodyParser, core.config, routes.routes, callback
