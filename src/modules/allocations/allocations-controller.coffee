@@ -1,12 +1,17 @@
 module.exports = (http, db, _, async) ->
 
   getEmployeeById = (employees, employeeId) ->
-
-
     for employee in employees
 
       if employeeId.toString() == employee._id.toString()
         return employee
+
+  getProjectById = (projects, projectId) ->
+
+    for project in projects
+
+      if projectId.toString() == project._id.toString()
+        return project
 
   getAll: (data, callback) ->
 
@@ -36,7 +41,7 @@ module.exports = (http, db, _, async) ->
           startDate: allocation.startDate
           endDate: allocation.endDate
           realAllocation: allocation.realAllocation
-          project: _.find(projects, '_id', allocation.project_id)
+          project: getProjectById(projects, allocation.project_id)
           employee: getEmployeeById(employees, allocation.employee_id)
 
 
