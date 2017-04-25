@@ -1,5 +1,7 @@
 # Node.js - API Server
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tibawatanabe/alloc-me-server.svg)](https://greenkeeper.io/)
+
 ## Development environment setup
 
 This is what do you need to run this project locally:
